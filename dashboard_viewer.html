@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorUG Dashboard - Preview</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="dashboard-root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Lucide React Icons (simplified versions)
+        const BookOpen = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+        );
+
+        const MessageSquare = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        );
+
+        const Trophy = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M19 3v4M5 11V5a2 2 0 012-2h10a2 2 0 012 2v6a2 2 0 01-2 2H7a2 2 0 01-2-2zM7 15l2 2a2 2 0 004 0l2-2M12 6v6" />
+            </svg>
+        );
+
+        const Target = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx={12} cy={12} r={10} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                <circle cx={12} cy={12} r={6} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                <circle cx={12} cy={12} r={2} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+            </svg>
+        );
+
+        const TrendingUp = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+        );
+
+        const Clock = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx={12} cy={12} r={10} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                <polyline points="12,6 12,12 16,14" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+            </svg>
+        );
+
+        const Award = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx={12} cy={8} r={7} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+            </svg>
+        );
+
+        const Users = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+        );
+
+        function Dashboard() {
+          const [user] = useState({
+            name: "John Mugisha",
+            class: "S3",
+            school: "King's College Budo",
+            streak: 12,
+            rank: "Tutor",
+            points: 487
+          });
+
+          const [progress] = useState({
+            overall: 30,
+            subjects: [
+              { name: "Mathematics", progress: 65, avgScore: 82, color: "bg-blue-500" },
+              { name: "Physics", progress: 40, avgScore: 75, color: "bg-purple-500" },
+              { name: "Chemistry", progress: 35, avgScore: 68, color: "bg-green-500" },
+              { name: "Biology", progress: 45, avgScore: 80, color: "bg-orange-500" }
+            ],
+            topicsCompleted: 45,
+            totalTopics: 150,
+            studyTime: 28.5,
+            quizzesTaken: 23
+          });
+
+          const [todayGoal] = useState({
+            title: "Complete 'Quadratic Formula'",
+            progress: 80,
+            minutesRemaining: 10
+          });
+
+          const [quickActions] = useState([
+            {
+              type: "continue",
+              title: "Continue Quadratic Equations",
+              subject: "Mathematics",
+              icon: React.createElement(BookOpen),
+              color: "from-blue-500 to-blue-600"
+            },
+            {
+              type: "quiz",
+              title: "Test your Physics knowledge",
+              subject: "Physics",
+              icon: React.createElement(Target),
+              color: "from-purple-500 to-purple-600"
+            },
+            {
+              type: "community",
+              title: "Join Math discussion",
+              subject: "Community",
+              icon: React.createElement(Users),
+              color: "from-green-500 to-green-600"
+            }
+          ]);
+
+          const [recentActivity] = useState([
+            { type: "completed", title: "Quadratic Equations - Intro", subject: "Mathematics", time: "2 hours ago" },
+            { type: "quiz", title: "Scored 85% on Algebra Quiz", subject: "Mathematics", time: "5 hours ago" },
+            { type: "badge", title: "Earned 'Math Wizard' badge", subject: "Achievement", time: "Yesterday" }
+          ]);
+
+          return (
+            React.createElement('div', { className: 'min-h-screen bg-gray-50' },
+              // Header
+              React.createElement('div', { className: 'bg-white border-b' },
+                React.createElement('div', { className: 'max-w-7xl mx-auto px-4 py-4' },
+                  React.createElement('div', { className: 'flex items-center justify-between' },
+                    React.createElement('div', null,
+                      React.createElement('h1', { className: 'text-2xl font-bold text-gray-900' }, 'Welcome back, ', user.name, '! 👋'),
+                      React.createElement('p', { className: 'text-gray-600' }, user.class, ' • ', user.school)
+                    ),
+                    React.createElement('div', { className: 'flex items-center space-x-4' },
+                      React.createElement('div', { className: 'text-right' },
+                        React.createElement('div', { className: 'text-sm text-gray-600' }, 'Study Streak'),
+                        React.createElement('div', { className: 'text-2xl font-bold text-orange-500 flex items-center' },
+                          '🔥 ', user.streak, ' days'
+                        )
+                      ),
+                      React.createElement('div', { className: 'text-right' },
+                        React.createElement('div', { className: 'text-sm text-gray-600' }, 'Rank'),
+                        React.createElement('div', { className: 'text-lg font-bold text-blue-600' }, user.rank)
+                      )
+                    )
+                  )
+                )
+              ),
+
+              React.createElement('div', { className: 'max-w-7xl mx-auto px-4 py-8' },
+                React.createElement('div', { className: 'grid lg:grid-cols-3 gap-8' },
+                  // Main Content
+                  React.createElement('div', { className: 'lg:col-span-2 space-y-6' },
+                    // Today's Goal
+                    React.createElement('div', { className: 'bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white' },
+                      React.createElement('div', { className: 'flex items-center justify-between mb-4' },
+                        React.createElement('h2', { className: 'text-xl font-bold' }, "Today's Goal 🎯"),
+                        React.createElement('span', { className: 'bg-white/20 px-3 py-1 rounded-full text-sm' },
+                          todayGoal.minutesRemaining, ' min left'
+                        )
+                      ),
+                      React.createElement('p', { className: 'text-lg mb-4' }, todayGoal.title),
+                      React.createElement('div', { className: 'w-full bg-white/20 rounded-full h-3 mb-2' },
+                        React.createElement('div', {
+                          className: 'bg-white h-3 rounded-full transition-all',
+                          style: { width: todayGoal.progress + '%' }
+                        })
+                      ),
+                      React.createElement('p', { className: 'text-sm text-blue-100' }, todayGoal.progress, '% complete')
+                    ),
+
+                    // Quick Actions
+                    React.createElement('div', null,
+                      React.createElement('h2', { className: 'text-xl font-bold text-gray-900 mb-4' }, 'Quick Actions'),
+                      React.createElement('div', { className: 'grid md:grid-cols-3 gap-4' },
+                        quickActions.map((action, idx) =>
+                          React.createElement('button', {
+                            key: idx,
+                            className: `bg-gradient-to-br ${action.color} p-6 rounded-xl text-white hover:shadow-lg transition text-left`
+                          },
+                            React.createElement('div', { className: 'mb-3' }, action.icon),
+                            React.createElement('h3', { className: 'font-semibold mb-1' }, action.title),
+                            React.createElement('p', { className: 'text-sm text-white/80' }, action.subject)
+                          )
+                        )
+                      )
+                    ),
+
+                    // Subject Progress
+                    React.createElement('div', { className: 'bg-white rounded-xl p-6 shadow-sm' },
+                      React.createElement('h2', { className: 'text-xl font-bold text-gray-900 mb-6' }, 'Your Progress by Subject'),
+                      React.createElement('div', { className: 'space-y-6' },
+                        progress.subjects.map((subject, idx) =>
+                          React.createElement('div', { key: idx },
+                            React.createElement('div', { className: 'flex items-center justify-between mb-2' },
+                              React.createElement('div', null,
+                                React.createElement('h3', { className: 'font-semibold text-gray-900' }, subject.name),
+                                React.createElement('p', { className: 'text-sm text-gray-600' }, 'Avg: ', subject.avgScore, '%')
+                              ),
+                              React.createElement('span', { className: 'text-sm font-semibold text-gray-700' },
+                                subject.progress, '%'
+                              )
+                            ),
+                            React.createElement('div', { className: 'w-full bg-gray-200 rounded-full h-2' },
+                              React.createElement('div', {
+                                className: `${subject.color} h-2 rounded-full transition-all`,
+                                style: { width: subject.progress + '%' }
+                              })
+                            )
+                          )
+                        )
+                      )
+                    ),
+
+                    // Recent Activity
+                    React.createElement('div', { className: 'bg-white rounded-xl p-6 shadow-sm' },
+                      React.createElement('h2', { className: 'text-xl font-bold text-gray-900 mb-4' }, 'Recent Activity'),
+                      React.createElement('div', { className: 'space-y-4' },
+                        recentActivity.map((activity, idx) =>
+                          React.createElement('div', {
+                            key: idx,
+                            className: 'flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-0'
+                          },
+                            React.createElement('div', {
+                              className: `w-2 h-2 rounded-full mt-2 ${
+                                activity.type === 'completed' ? 'bg-green-500' :
+                                activity.type === 'quiz' ? 'bg-blue-500' : 'bg-orange-500'
+                              }`
+                            }),
+                            React.createElement('div', { className: 'flex-1' },
+                              React.createElement('p', { className: 'font-medium text-gray-900' }, activity.title),
+                              React.createElement('p', { className: 'text-sm text-gray-600' }, activity.subject)
+                            ),
+                            React.createElement('span', { className: 'text-xs text-gray-500 whitespace-nowrap' }, activity.time)
+                          )
+                        )
+                      )
+                    )
+                  ),
+
+                  // Sidebar
+                  React.createElement('div', { className: 'space-y-6' },
+                    // Stats Card
+                    React.createElement('div', { className: 'bg-white rounded-xl p-6 shadow-sm' },
+                      React.createElement('h3', { className: 'font-bold text-gray-900 mb-4' }, 'Your Stats'),
+                      React.createElement('div', { className: 'space-y-4' },
+                        [
+                          { icon: React.createElement(BookOpen), label: 'Topics', value: progress.topicsCompleted + '/' + progress.totalTopics },
+                          { icon: React.createElement(Target), label: 'Quizzes', value: progress.quizzesTaken },
+                          { icon: React.createElement(Clock), label: 'Study Time', value: progress.studyTime + 'h' },
+                          { icon: React.createElement(Trophy), label: 'Points', value: user.points }
+                        ].map((stat, idx) =>
+                          React.createElement('div', { key: idx, className: 'flex items-center justify-between' },
+                            React.createElement('div', { className: 'flex items-center space-x-3' },
+                              React.createElement('div', { className: 'w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center' }, stat.icon),
+                              React.createElement('div', null,
+                                React.createElement('p', { className: 'text-sm text-gray-600' }, stat.label),
+                                React.createElement('p', { className: 'font-bold text-gray-900' }, stat.value)
+                              )
+                            )
+                          )
+                        )
+                      )
+                    ),
+
+                    // Leaderboard Preview
+                    React.createElement('div', { className: 'bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-100' },
+                      React.createElement('h3', { className: 'font-bold text-gray-900 mb-4 flex items-center' },
+                        React.createElement(Trophy, { className: 'w-5 h-5 mr-2 text-orange-500' }),
+                        'Your Rank'
+                      ),
+                      React.createElement('div', { className: 'text-center mb-4' },
+                        React.createElement('div', { className: 'text-4xl font-bold text-gray-900 mb-1' }, '#47'),
+                        React.createElement('p', { className: 'text-sm text-gray-600' }, 'out of 1,250 students')
+                      ),
+                      React.createElement('button', { className: 'w-full bg-white text-gray-900 py-2 rounded-lg hover:bg-gray-50 font-medium transition' },
+                        'View Full Leaderboard'
+                      )
+                    ),
+
+                    // Achievements
+                    React.createElement('div', { className: 'bg-white rounded-xl p-6 shadow-sm' },
+                      React.createElement('h3', { className: 'font-bold text-gray-900 mb-4 flex items-center' },
+                        React.createElement(Award, { className: 'w-5 h-5 mr-2 text-blue-500' }),
+                        'Recent Badges'
+                      ),
+                      React.createElement('div', { className: 'grid grid-cols-3 gap-3' },
+                        [
+                          { emoji: '🧮', name: 'Math Wizard' },
+                          { emoji: '🔥', name: 'On Fire' },
+                          { emoji: '🤝', name: 'Team Player' }
+                        ].map((badge, idx) =>
+                          React.createElement('div', { key: idx, className: 'text-center' },
+                            React.createElement('div', { className: 'w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-2' },
+                              React.createElement('span', { className: 'text-2xl' }, badge.emoji)
+                            ),
+                            React.createElement('p', { className: 'text-xs text-gray-600' }, badge.name)
+                          )
+                        )
+                      )
+                    ),
+
+                    // Motivational Quote
+                    React.createElement('div', { className: 'bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-6 text-white' },
+                      React.createElement('p', { className: 'text-lg font-medium mb-2' },
+                        '"Success is the sum of small efforts repeated day in and day out."'
+                      ),
+                      React.createElement('p', { className: 'text-sm text-blue-100' }, '- Robert Collier')
+                    )
+                  )
+                )
+              )
+            )
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('dashboard-root'));
+        root.render(React.createElement(Dashboard));
+    </script>
+</body>
+</html>

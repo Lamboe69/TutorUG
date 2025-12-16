@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorUG Secondary - Your AI-Powered Path to UNEB Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #374151; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            background-attachment: fixed;
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-title {
+            color: #ffffff !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 800 !important;
+        }
+        .hero-subtitle {
+            color: #e0e7ff !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-weight: 500 !important;
+        }
+        .section-bg-white { background-color: #ffffff !important; }
+        .text-visible { color: #374151 !important; }
+        .text-header { color: #1f2937 !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center cursor-pointer" onclick="scrollToSection('hero')">
+                            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white text-2xl font-bold">T</span>
+                            </div>
+                            <span class="ml-2 text-xl font-bold text-gray-900">TutorUG</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="scrollToSection('features')" class="text-gray-900 hover:text-blue-600 font-semibold transition-colors">Features</button>
+                    <button onclick="scrollToSection('pricing')" class="text-gray-900 hover:text-blue-600 font-semibold transition-colors">Pricing</button>
+                    <button onclick="scrollToSection('how-it-works')" class="text-gray-900 hover:text-blue-600 font-semibold transition-colors">How It Works</button>
+                    <button onclick="scrollToSection('features')" class="text-gray-900 hover:text-blue-600 font-semibold transition-colors">Success Stories</button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="openLoginModal()" class="text-gray-900 hover:text-blue-600 font-semibold transition-colors">Login</button>
+                    <button onclick="openSignupModal()" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition-all transform hover:scale-105 shadow-lg">
+                        Start Free Trial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 gradient-bg hero-pattern text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/30">
+                    <span class="text-lg font-semibold text-white mr-2">🇺🇬</span>
+                    <span class="text-white font-medium">Built for Ugandan Students</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight hero-title max-w-4xl mx-auto">
+                    Your AI-Powered Path to UNEB Excellence
+                </h1>
+
+                <p class="text-xl md:text-2xl hero-subtitle mb-10 max-w-3xl mx-auto leading-relaxed">
+                    24/7 personalized tutoring for all O-Level subjects. Just 25,000 UGX/month - less than 1,000 UGX per day.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <button onclick="openSignupModal()" class="bg-white text-blue-600 px-10 py-4 rounded-xl hover:bg-gray-50 font-bold text-xl transition-all shadow-2xl hover:shadow-white/20 transform hover:scale-105 hover:-translate-y-1">
+                        🚀 Start 7-Day Free Trial
+                    </button>
+                    <button onclick="openDemoModal()" class="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-xl hover:bg-white/20 hover:border-white/50 font-bold text-xl transition-all hover:bg-white hover:text-blue-600">
+                        ▶️ Watch Demo
+                    </button>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap justify-center items-center gap-8 mb-16">
+                    <div class="flex items-center text-white/90">
+                        <svg class="w-6 h-6 mr-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">No credit card required</span>
+                    </div>
+                    <div class="flex items-center text-white/90">
+                        <svg class="w-6 h-6 mr-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                        <span class="font-medium">Study groups (5 max)</span>
+                    </div>
+                    <div class="flex items-center text-white/90">
+                        <svg class="w-6 h-6 mr-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-medium">Priority support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Pricing Card -->
+            <div class="max-w-md mx-auto">
+                <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                            🔥 BEST VALUE
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-1">Annual Plan</h3>
+                        <div class="text-5xl font-black text-gray-900 mb-1">250,000 UGX</div>
+                        <div class="text-gray-600 mb-1">per year</div>
+                        <div class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full inline-block font-semibold">
+                            💰 Save 50,000 UGX (2 months FREE!)
+                        </div>
+                    </div>
+
+                    <button onclick="openSignupModal()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105 mb-6">
+                        ✨ Get Started Today
+                    </button>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-gray-900">Everything in Monthly</span>
+                                <span class="text-gray-600 block text-sm">Plus exclusive annual benefits</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">Annual member badge 🏆</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">Early feature access 🎁</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">VIP support 🤝</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+                    <span class="text-white font-medium mr-2">📱 Secure payments:</span>
+                    <span class="text-white/90">MTN Mobile Money & Airtel Money accepted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"></div>
+
+        <!-- Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent transform rotate-45 scale-150"></div>
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
+            <div class="absolute bottom-10 right-10 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Icons Row -->
+                <div class="flex justify-center items-center space-x-8 mb-8">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-black mb-6 text-white leading-tight">
+                    🚀 Ready to Excel in Your Exams?
+                </h2>
+
+                <p class="text-xl md:text-2xl text-blue-100 mb-4 font-medium max-w-4xl mx-auto">
+                    Join <span class="text-yellow-300 font-bold">10,000+ Ugandan students</span> already improving their grades with TutorUG Secondary
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+                    <button onclick="openSignupModal()" class="group bg-white text-blue-600 px-12 py-5 rounded-2xl hover:bg-gray-50 font-bold text-xl transition-all shadow-2xl hover:shadow-white/20 transform hover:scale-110 hover:-translate-y-2">
+                        🎯 Start Your Free Trial
+                        <span class="block text-sm font-normal text-gray-600 mt-1">7 days • No credit card</span>
+                    </button>
+
+                    <div class="flex items-center space-x-8 text-white/90">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-medium">Cancel anytime</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-medium">Instant access</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-2xl mx-auto">
+                    <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
+                            <div class="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
+                            <div class="w-8 h-8 bg-orange-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                +
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white/90 text-lg">
+                        <span class="text-yellow-300 font-bold">★★★★★ 4.8/5 rating</span> from 2,300+ students
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Modal Overlays -->
+    <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Start Your Free Trial</h2>
+                <p class="text-gray-600">7 days of unlimited AI tutoring</p>
+            </div>
+            <form onsubmit="handleSignup(event)" class="space-y-4">
+                <div>
+                    <input type="text" id="firstName" placeholder="First Name" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <input type="text" id="lastName" placeholder="Last Name" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number (e.g. 0772123456)" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <select id="currentClass" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select Your Class</option>
+                        <option value="S1">Senior 1 (S1)</option>
+                        <option value="S2">Senior 2 (S2)</option>
+                        <option value="S3">Senior 3 (S3)</option>
+                        <option value="S4">Senior 4 (S4)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                    Get Started - It's FREE!
+                </button>
+            </form>
+            <div class="mt-4 text-center">
+                <button onclick="closeModal(); openLoginModal()" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                    Already have an account? Login here
+                </button>
+            </div>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome Back!</h2>
+                <p class="text-gray-600">Continue your learning journey</p>
+            </div>
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <input type="tel" id="loginPhoneNumber" placeholder="Phone Number (e.g. 0772123456)" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                    Send Login Code
+                </button>
+            </form>
+            <div class="mt-4 text-center">
+                <button onclick="closeModal(); openSignupModal()" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                    New to TutorUG? Sign up free
+                </button>
+            </div>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="demo-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Watch TutorUG in Action</h2>
+                    <p class="text-gray-600">See how our AI tutor helps students excel</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-8 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+                    <p class="text-gray-600 mb-4">Our demo video is currently in production. Sign up now to be notified when it's ready!</p>
+                    <button onclick="closeModal(); openSignupModal();" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                        Get Notified
+                    </button>
+                </div>
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Modal functions
+        function openSignupModal() {
+            document.getElementById('signup-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openDemoModal() {
+            document.getElementById('demo-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openAboutModal() {
+            alert('About Us: TutorUG was founded in 2025 to make quality education accessible to every Ugandan student. Our mission is to combine AI technology with local context to create the best learning experience possible.');
+        }
+
+        function openContactModal() {
+            alert('Contact Us: 📧 support@tutoruganda.com 📱 WhatsApp: +256 XXX XXX XXX 🌐 Website: www.tutoruganda.com\n\nWe typically respond within 2 hours during business hours!');
+        }
+
+        function openCareersModal() {
+            alert('Careers at TutorUG: We are looking for passionate educators and tech innovators to join our mission. Current openings:\n\n• AI/ML Engineer\n• Curriculum Developer\n• Community Manager\n• Marketing Specialist\n\nVisit our website to apply!');
+        }
+
+        function openBlogModal() {
+            alert('TutorUG Blog: Stay updated with the latest in education technology and learning tips.\n\nRecent Posts:\n\n• "How AI is Revolutionizing Ugandan Education"\n• "UNEB 2026: What to Expect"\n• "Study Tips from Top-Performing Students"\n• "The Future of Learning in Africa"');
+        }
+
+        function openTermsModal() {
+            alert('Terms of Service: By using TutorUG, you agree to:\n\n• Use the platform for educational purposes only\n• Respect other students and community guidelines\n• Not share account credentials\n• Cancel subscription anytime\n• Refund policy within 7 days\n\nFull terms available at terms.tutoruganda.com');
+        }
+
+        function openPrivacyModal() {
+            alert('Privacy Policy: We take your privacy seriously.\n\n• Your data is encrypted and secure\n• We never share personal information\n• SMS communications are opt-in only\n• You can export or delete your data anytime\n• GDPR and Ugandan data protection compliant\n\nSee full policy at privacy.tutoruganda.com');
+        }
+
+        function openCommunityModal() {
+            alert('Community Guidelines:\n\n✅ Be respectful and supportive\n✅ Help other students when you can\n✅ Use appropriate language\n✅ Ask questions clearly\n✅ Share helpful resources\n✅ Report any issues\n\n❌ No bullying or harassment\n❌ No inappropriate content\n❌ No cheating or academic dishonesty\n❌ No spamming\n\nViolations may result in account suspension.');
+        }
+
+        function openSubjectsModal() {
+            alert('Available Subjects:\n\n📚 Mathematics (Algebra, Geometry, Calculus)\n🧪 Physics (Mechanics, Electricity, Waves)\n⚗️ Chemistry (Organic, Inorganic, Physical)\n🌿 Biology (Cells, Genetics, Ecology)\n📖 English Language & Literature\n🏛️ History & Social Studies\n💰 Commerce & Entrepreneurship\n🖥️ ICT & Computer Science\n\nAll subjects include UNEB syllabus coverage, practice questions, and AI tutoring!');
+        }
+
+        function closeModal() {
+            document.getElementById('signup-modal').classList.add('hidden');
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('demo-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Handle signup form submission
+        function handleSignup(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const currentClass = document.getElementById('currentClass').value;
+
+            // Basic validation
+            if (!firstName || !lastName || !phoneNumber || !currentClass) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Phone number validation for Uganda
+            const ugandanPhoneRegex = /^(?:\+?256|0)?[7-9]\d{8}$/;
+            if (!ugandanPhoneRegex.test(phoneNumber)) {
+                alert('Please enter a valid Ugandan phone number (e.g. 0772123456)');
+                return;
+            }
+
+            // Simulate successful signup
+            alert(`🎉 Welcome to TutorUG, ${firstName}!\n\nYour 7-day free trial has started.\nWe'll send you a confirmation SMS to ${phoneNumber}\n\nNext: We'll guide you through setting up your personalized learning path!`);
+
+            closeModal();
+
+            // Scroll to the AI tutor demo section
+            scrollToSection('features');
+        }
+
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const phoneNumber = document.getElementById('loginPhoneNumber').value;
+
+            if (!phoneNumber) {
+                alert('Please enter your phone number.');
+                return;
+            }
+
+            // Phone number validation for Uganda
+            const ugandanPhoneRegex = /^(?:\+?256|0)?[7-9]\d{8}$/;
+            if (!ugandanPhoneRegex.test(phoneNumber)) {
+                alert('Please enter a valid Ugandan phone number (e.g. 0772123456)');
+                return;
+            }
+
+            // Simulate successful login code sending
+            alert(`📱 We've sent a login code to ${phoneNumber}!\n\nThis will log you into your TutorUG dashboard.\n\nNext: You'll be redirected to your personalized learning dashboard!`);
+
+            closeModal();
+
+            // Scroll to features to simulate dashboard access
+            scrollToSection('features');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const signupModal = document.getElementById('signup-modal');
+            const demoModal = document.getElementById('demo-modal');
+            const loginModal = document.getElementById('login-modal');
+
+            if (event.target === signupModal || event.target === demoModal || event.target === loginModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add animation to feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply fade-in animation to feature cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('#features .bg-white');
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+</body>
+</html>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 text-sm font-bold">U</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="bg-gray-100 rounded-lg p-3">
+                                        <p class="text-gray-800 text-sm">How do I solve quadratic equations using the formula?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-purple-600 text-sm font-bold">AI</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3">
+                                        <p class="text-gray-800 text-sm mb-2">Great question! The quadratic formula is: <strong>x = (-b ± √(b²-4ac)) / 2a</strong></p>
+                                        <p class="text-gray-600 text-sm">Let me explain with a Ugandan example: Imagine a boda boda traveling from Wandegeya...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center space-x-2 py-2">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+                                <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600">30+</div>
+                    <div class="text-gray-600 mt-2">Subjects Covered</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600">24/7</div>
+                    <div class="text-gray-600 mt-2">AI Tutor Available</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600">10,000+</div>
+                    <div class="text-gray-600 mt-2">Practice Questions</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600">90%</div>
+                    <div class="text-gray-600 mt-2">Student Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything You Need to Excel</h2>
+                <p class="text-xl text-gray-600">One platform, all subjects, unlimited learning</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Tutoring</h3>
+                    <p class="text-gray-600">Get instant, personalized explanations for any topic. Our AI understands Ugandan context and uses local examples.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complete UNEB Curriculum</h3>
+                    <p class="text-gray-600">All O-Level subjects aligned with UNEB syllabus. From Mathematics to Literature, we've got you covered.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Student Community</h3>
+                    <p class="text-gray-600">Learn with thousands of Ugandan students. Share tips, ask questions, and celebrate success together.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Practice Quizzes</h3>
+                    <p class="text-gray-600">Test your knowledge with UNEB-style questions. Get instant feedback and detailed explanations.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Progress Tracking</h3>
+                    <p class="text-gray-600">Monitor your improvement with detailed analytics. See what you've mastered and where to focus.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Text-to-Speech</h3>
+                    <p class="text-gray-600">Listen to lessons in natural Ugandan-accented English. Perfect for learning on the go or auditory learners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple, Affordable Pricing</h2>
+                <p class="text-xl text-gray-600">75% cheaper than private tuition. One price, all subjects.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Trial -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free Trial</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-1">0 UGX</div>
+                        <div class="text-gray-600 mb-6">7 days</div>
+                        <a href="/signup" class="block w-full bg-gray-100 text-gray-900 py-3 rounded-lg hover:bg-gray-200 font-semibold transition">
+                            Start Free Trial
+                        </a>
+                    </div>
+                    <ul class="mt-8 space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">10 AI questions/day</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Access to 2 subjects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Text-to-speech</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Monthly Plan-->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-purple-200 rounded-2xl p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-1">Annual Plan</h3>
+                        <div class="text-5xl font-black text-gray-900 mb-1">25,000 UGX</div>
+                        <div class="text-gray-600 mb-1">per month</div>
+                    </div>
+
+                    <button onclick="openSignupModal()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105 mb-6">
+                        ✨ Get Started Today
+                    </button>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-gray-900">Everything in Free Plan</span>
+                                <span class="text-gray-600 block text-sm">Plus exclusive monthly benefits</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">Monthly member badge 🏆</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">Early feature access 🎁</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-gray-900">VIP support 🤝</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Stats Section -->
+        <section class="py-12 bg-white border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600">30+</div>
+                        <div class="text-gray-600 mt-2">Subjects Covered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-400">24/7</div>
+                        <div class="text-gray-600 mt-2">AI Available</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-400">10K+</div>
+                        <div class="text-gray-600 mt-2">Practice Questions</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-yellow-400">4.8</div>
+                        <div class="text-gray-600 mt-2">Star Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything You Need to Excel</h2>
+                    <p class="text-xl text-gray-600">One platform, all subjects, unlimited learning</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Tutoring</h3>
+                        <p class="text-gray-600">Get instant, personalized explanations for any topic. Our AI understands Ugandan context and uses local examples.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Complete UNEB Curriculum</h3>
+                        <p class="text-gray-600">All O-Level subjects aligned with UNEB syllabus. From Mathematics to Literature, we've got you covered.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Student Community</h3>
+                        <p class="text-gray-600">Learn with thousands of Ugandan students. Share tips, ask questions, and celebrate success together.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Practice Quizzes</h3>
+                        <p class="text-gray-600">Test your knowledge with UNEB-style questions. Get instant feedback and detailed explanations.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Progress Tracking</h3>
+                        <p class="text-gray-600">Monitor your improvement with detailed analytics. See what you've mastered and where to focus.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Text-to-Speech</h3>
+                        <p class="text-gray-600">Listen to lessons in natural Ugandan-accented English. Perfect for learning on the go or auditory learners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Footer -->
+        <footer class="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-20 w-40 h-40 bg-purple-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+                <!-- Main Footer Content -->
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <!-- Brand Column -->
+                    <div class="md:col-span-2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <span class="text-white text-2xl font-black">T</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-2xl font-bold text-white">TutorUG</h3>
+                                <p class="text-gray-400">Your AI-Powered Path to UNEB Excellence</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 mb-6 leading-relaxed max-w-md">
+                            Empowering Ugandan students with personalized AI tutoring, comprehensive curriculum coverage, and a supportive learning community. All for just 25,000 UGX/month.
+                        </p>
+
+                        <!-- Social Links -->
+                        <div class="flex space-x-4 mb-6">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.101.118.115.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.747-1.378 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24.001 12.017 24.001c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="space-y-2 text-gray-400">
+                            <p>📧 support@tutoruganda.com</p>
+                            <p>📱 WhatsApp: +256 XXX XXX XXX</p>
+                            <p>🌐 Kampala, Uganda 🇺🇬</p>
+                        </div>
+                    </div>
+
+                    <!-- Product Column -->
+                    <div>
+                        <h4 class="font-bold text-white mb-4 text-lg">🚀 Product</h4>
+                        <ul class="space-y-3">
+                            <li><button onclick="scrollToSection('features')" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">✨</span>Features</button></li>
+                            <li><button onclick="scrollToSection('pricing')" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">💰</span>Pricing</button></li>
+                            <li><button onclick="openSubjectsModal()" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">📚</span>Subjects</button></li>
+                            <li><button onclick="scrollToSection('features')" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">🎯</span>How It Works</button></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company Column -->
+                    <div>
+                        <h4 class="font-bold text-white mb-4 text-lg">🏢 Company</h4>
+                        <ul class="space-y-3">
+                            <li><button onclick="openAboutModal()" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">📖</span>About Us</button></li>
+                            <li><button onclick="openContactModal()" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">📞</span>Contact</button></li>
+                            <li><button onclick="openCareersModal()" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">💼</span>Careers</button></li>
+                            <li><button onclick="openBlogModal()" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+                                <span class="mr-2">📰</span>Blog</button></li>
+                        </ul>
+
+                        <!-- App Download Buttons -->
+                        <div class="mt-6 space-y-2">
+                            <p class="text-white font-medium text-sm mb-2">📱 Get the App</p>
+                            <div class="flex space-x-2">
+                                <div class="bg-gray-800 px-3 py-2 rounded-lg text-xs text-white hover:bg-gray-700 transition-colors cursor-not-allowed opacity-50">
+                                    Coming Soon
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="border-t border-gray-800 pt-8 pb-6 mb-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div class="bg-white/5 rounded-lg p-4 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-blue-400 mb-1">30+</div>
+                            <div class="text-sm text-gray-400">Subjects Covered</div>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-green-400 mb-1">24/7</div>
+                            <div class="text-sm text-gray-400">AI Available</div>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-purple-400 mb-1">10K+</div>
+                            <div class="text-sm text-gray-400">Practice Questions</div>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-4 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-yellow-400 mb-1">4.8</div>
+                            <div class="text-sm text-gray-400">Star Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+                        <div class="flex flex-wrap items-center space-x-4 mb-4 md:mb-0">
+                            <p class="text-gray-400">© 2025 TutorUG Secondary. Made with ❤️ in Uganda 🇺🇬</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="openTermsModal()" class="text-gray-400 hover:text-white transition-colors">Terms</button>
+                                <button onclick="openPrivacyModal()" class="text-gray-400 hover:text-white transition-colors">Privacy</button>
+                                <button onclick="openCommunityModal()" class="text-gray-400 hover:text-white transition-colors">Guidelines</button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <button onclick="scrollToSection('hero')" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                                Back to Top
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal Overlays -->
+        <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Start Your Free Trial</h2>
+                    <p class="text-gray-600">7 days of unlimited AI tutoring</p>
+                </div>
+                <form onsubmit="handleSignup(event)" class="space-y-4">
+                    <div>
+                        <input type="text" id="firstName" placeholder="First Name" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="text" id="lastName" placeholder="Last Name" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="tel" id="phoneNumber" placeholder="Phone Number (e.g. 0772123456)" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <select id="currentClass" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select Your Class</option>
+                            <option value="S1">Senior 1 (S1)</option>
+                            <option value="S2">Senior 2 (S2)</option>
+                            <option value="S3">Senior 3 (S3)</option>
+                            <option value="S4">Senior 4 (S4)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                        Get Started - It's FREE!
+                    </button>
+                </form>
+                <div class="mt-4 text-center">
+                    <button onclick="closeModal(); openLoginModal()" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                        Already have an account? Login here
+                    </button>
+                </div>
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome Back!</h2>
+                    <p class="text-gray-600">Continue your learning journey</p>
+                </div>
+                <form onsubmit="handleLogin(event)" class="space-y-4">
+                    <div>
+                        <input type="tel" id="loginPhoneNumber" placeholder="Phone Number (e.g. 0772123456)" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                        Send Login Code
+                    </button>
+                </form>
+                <div class="mt-4 text-center">
+                    <button onclick="closeModal(); openSignupModal()" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                        New to TutorUG? Sign up free
+                    </button>
+                </div>
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="demo-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="p-8">
+                    <div class="text-center mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Watch TutorUG in Action</h2>
+                        <p class="text-gray-600">See how our AI tutor helps students excel</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-8 text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Coming Soon!</h3>
+                        <p class="text-gray-600 mb-4">Our demo video is currently in production. Sign up now to be notified when it's ready!</p>
+                        <button onclick="closeModal(); openSignupModal();" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition">
+                            Get Notified
+                        </button>
+                    </div>
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+</body>
+</html>
