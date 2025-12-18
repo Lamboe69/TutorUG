@@ -3,19 +3,24 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Button from "./components/Button";
+import Input from "./components/Input";
+import Card from "./components/Card";
+import Loader from "./components/Loader";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col gap-4 items-center justify-center">
-      <h1 className="text-2xl font-semibold text-slate-800">
-        TutorUG Frontend Ready 🚀
-      </h1>
+    <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center gap-6 p-4">
+      <h1 className="text-2xl font-semibold">TutorUG UI Kit</h1>
 
-      <div className="flex gap-3">
-        <Button>Get Started</Button>
-        <Button variant="secondary">Login</Button>
-        <Button variant="outline">Learn More</Button>
-      </div>
+      <Card>
+        <Input label="Phone Number" placeholder="07XXXXXXXX" />
+        <div className="mt-4 flex gap-2">
+          <Button>Continue</Button>
+          <Button variant="outline">Cancel</Button>
+        </div>
+      </Card>
+
+      <Loader />
     </div>
   );
 }
