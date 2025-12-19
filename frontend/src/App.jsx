@@ -7,23 +7,10 @@ import Input from "./components/Input";
 import Card from "./components/Card";
 import Loader from "./components/Loader";
 
+import AppRoutes from "./routes/AppRoutes";
+
 function App() {
-  return (
-    <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center gap-6 p-4">
-      <h1 className="text-2xl font-semibold">TutorUG UI Kit</h1>
-
-      <Card>
-        <Input label="Phone Number" placeholder="07XXXXXXXX" />
-        <div className="mt-4 flex gap-2">
-          <Button>Continue</Button>
-          <Button variant="outline">Cancel</Button>
-        </div>
-      </Card>
-
-      <Loader />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
-
