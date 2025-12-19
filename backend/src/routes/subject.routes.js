@@ -1,27 +1,35 @@
 const express = require('express');
 const router = express.Router();
-// const {
-//   getSubjects,
-//   getSubjectTopics,
-//   // ... other controllers
-// } = require('../controllers/subjectController');
-// const { authenticateToken, requireActiveSubscription } = require('../utils/jwt');
+const {
+  getSubjects,
+  getSubject,
+  getSubjectTopics,
+  getTopic,
+  getSubtopic,
+  searchContent,
+  getRecommended
+} = require('../controllers/subjectController');
+const { authenticateToken, optionalAuth } = require('../utils/jwt');
 
-// Placeholder routes - will implement later
-router.get('/', (req, res) => {
-  res.json({
-    success: true,
-    message: 'Subjects endpoint - coming soon',
-    data: []
-  });
-});
+// Get all subjects (public, but can include progress for authenticated users)
+router.get('/', optionalAuth, getSubjects);
 
-router.get('/:subjectId/topics', (req, res) => {
-  res.json({
-    success: true,
-    message: 'Topics endpoint - coming soon',
-    data: []
-  });
-});
+// Get single subject with topics
+router.get('/:subjectId', optionalAuth, getSubject);
+
+// Get topics for a subject
+router.get('/:subjectId/topics', optionalAuth, getSubjectTopics);
+
+// Get single topic with subtopics
+router.get('/topic/:topicId', optionalAuth, getTopic);
+
+// Get single subtopic
+router.get('/subtopic/:subtopicId', optionalAuth, getSubtopic);
+
+// Search content
+router.get('/search', optionalAuth, searchContent);
+
+// Get recommended content (requires authentication)
+router.get('/recommended', authenticateToken, getRecommended);
 
 module.exports = router;

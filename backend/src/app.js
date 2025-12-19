@@ -11,6 +11,7 @@ const { sequelize } = require('./config/database');
 // Import routes
 const authRoutes = require('./routes/auth.routes');
 const subjectRoutes = require('./routes/subject.routes');
+const chatRoutes = require('./routes/chat.routes');
 // Add more routes as we create them
 
 const app = express();
@@ -56,6 +57,7 @@ app.get('/health', (req, res) => {
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/subjects', subjectRoutes);
+app.use('/api/chat', chatRoutes);
 // Add more routes as we create them
 
 // 404 handler
