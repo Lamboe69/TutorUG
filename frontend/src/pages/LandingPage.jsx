@@ -5,7 +5,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-slate-50">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-28 text-center">
+      <section className="max-w-6xl mx-auto px-6 py-28 text-center bg-blue-50 rounded-b-3xl">
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
           Learn Smarter with{" "}
           <span className="text-blue-600">TutorUG</span>
@@ -50,9 +50,11 @@ export default function LandingPage() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-8 bg-slate-50 rounded-2xl border 
+                className="p-8 bg-white rounded-2xl 
+                           border border-slate-200 
                            text-center transition 
                            hover:shadow-lg hover:-translate-y-1"
+
               >
                 <h3 className="text-xl font-semibold text-slate-900">
                   {item.title}
