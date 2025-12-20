@@ -1,6 +1,28 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 
 export default function Login() {
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = () => {
+    setError("");
+
+    if (!phone || !password) {
+      setError("Please enter both phone number and password.");
+      return;
+    }
+
+    setLoading(true);
+
+    // TEMP: simulate login delay
+    setTimeout(() => {
+      window.location.href = "/dashboard";
+    }, 1000);
+  };
+
   return (
     <div className="min-h-screen bg-blue-50">
       <Navbar />
@@ -12,7 +34,7 @@ export default function Login() {
             Welcome Back
           </h2>
 
-          <form className="space-y-5">
+          <div className="space-y-5">
 
             <div>
               <label className="block text-sm font-medium mb-1">
@@ -20,6 +42,8 @@ export default function Login() {
               </label>
               <input
                 type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 placeholder="e.g. 0770123456"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -31,21 +55,32 @@ export default function Login() {
               </label>
               <input
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
-            {/* TEMPORARY LOGIN ACTION */}
+            {error && (
+              <p className="text-red-600 text-sm text-center">
+                {error}
+              </p>
+            )}
+
             <button
-              type="button"
-              onClick={() => (window.location.href = "/dashboard")}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+              onClick={handleLogin}
+              disabled={loading}
+              className={`w-full py-3 rounded-lg font-semibold transition ${
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-600 text-white hover:bg-blue-700"
+              }`}
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
 
-          </form>
+          </div>
 
           <p className="text-center text-sm text-gray-600 mt-6">
             Don’t have an account?{" "}
