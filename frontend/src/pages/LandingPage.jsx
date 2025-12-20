@@ -2,10 +2,14 @@ import Button from "../components/Button";
 
 export default function LandingPage() {
   return (
+
     <div className="min-h-screen bg-slate-50">
+    
+
 
       {/* ================= HERO SECTION ================= */}
       <section className="bg-blue-50">
+        
         <div className="max-w-6xl mx-auto px-6 py-28 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
             Learn Smarter with{" "}
