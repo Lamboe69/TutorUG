@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { loginUser } from "../utils/auth";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
@@ -17,8 +18,9 @@ export default function Login() {
 
     setLoading(true);
 
-    // TEMP: simulate login delay
+    // TEMP: simulate login
     setTimeout(() => {
+      loginUser(); // set auth state
       window.location.href = "/dashboard";
     }, 1000);
   };

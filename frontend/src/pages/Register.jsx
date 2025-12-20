@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { loginUser } from "../utils/auth";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -19,8 +20,9 @@ export default function Register() {
 
     setLoading(true);
 
-    // TEMP: simulate account creation
+    // TEMP: simulate registration
     setTimeout(() => {
+      loginUser(); // auto-login after register
       window.location.href = "/dashboard";
     }, 1200);
   };
