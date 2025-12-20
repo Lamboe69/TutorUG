@@ -27,7 +27,7 @@ export default function Login() {
     <div className="min-h-screen bg-blue-50">
       <Navbar />
 
-      <div className="flex items-center justify-center px-4 py-20">
+      <div className="flex items-center justify-center px-4 py-12 sm:py-20">
         <div className="bg-white w-full max-w-md rounded-xl shadow-lg p-8">
 
           <h2 className="text-3xl font-extrabold text-center mb-6">
