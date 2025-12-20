@@ -36,12 +36,15 @@ export default function Login() {
               />
             </div>
 
+            {/* TEMPORARY LOGIN ACTION */}
             <button
-              type="submit"
+              type="button"
+              onClick={() => (window.location.href = "/dashboard")}
               className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
               Login
             </button>
+
           </form>
 
           <p className="text-center text-sm text-gray-600 mt-6">
