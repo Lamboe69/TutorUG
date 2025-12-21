@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { isLoggedIn, logoutUser } from "../utils/auth";
+import { isLoggedIn, clearSession } from "../utils/auth";
 
 export default function Navbar() {
   const loggedIn = isLoggedIn();
 
   const handleLogout = () => {
-    logoutUser();
+    clearSession();
     window.location.href = "/";
   };
 
   return (
     <nav className="bg-white border-b">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        
+
         <Link to="/" className="text-2xl font-extrabold text-blue-600">
           TutorUG
         </Link>

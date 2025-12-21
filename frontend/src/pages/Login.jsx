@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { loginUser } from "../utils/auth";
+import { login } from "../services/authApi";
+import { setSession } from "../utils/auth";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
@@ -8,7 +10,9 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
     setError("");
 
     if (!phone || !password) {
@@ -16,13 +20,17 @@ export default function Login() {
       return;
     }
 
-    setLoading(true);
+    try {
+      setLoading(true);
+      const res = await login({ phone, password });
 
-    // TEMP: simulate login
-    setTimeout(() => {
-      loginUser(); // set auth state
-      window.location.href = "/dashboard";
-    }, 1000);
+      setSession({ token: res.token, role: res.role });
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.message || "Login failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
