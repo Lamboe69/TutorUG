@@ -34,7 +34,7 @@ export default function StudentDashboard() {
             </p>
           </Link>
 
-          {/* Practice & Quizzes */}
+          {/* Practice & Quizzes (Coming Soon) */}
           <div className="bg-white rounded-xl shadow p-6 opacity-90">
             <h3 className="text-xl font-semibold mb-2">
               Practice & Quizzes
@@ -47,18 +47,18 @@ export default function StudentDashboard() {
             </p>
           </div>
 
-          {/* Study Groups */}
-          <div className="bg-white rounded-xl shadow p-6 opacity-90">
+          {/* Study Groups / Discussions */}
+          <Link
+            to="/discussions"
+            className="bg-white rounded-xl shadow p-6 hover:shadow-lg transition block"
+          >
             <h3 className="text-xl font-semibold mb-2">
               Study Groups
             </h3>
             <p className="text-gray-600">
               Collaborate and discuss with fellow learners.
             </p>
-            <p className="text-sm text-gray-400 mt-2">
-              Coming soon
-            </p>
-          </div>
+          </Link>
 
         </div>
       </div>
