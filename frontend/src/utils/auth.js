@@ -1,15 +1,15 @@
-export const loginUser = (role = "student") => {
-  localStorage.setItem("tutorug_logged_in", "true");
+export const setSession = ({ token, role }) => {
+  localStorage.setItem("tutorug_token", token);
   localStorage.setItem("tutorug_role", role);
 };
 
-export const logoutUser = () => {
-  localStorage.removeItem("tutorug_logged_in");
+export const clearSession = () => {
+  localStorage.removeItem("tutorug_token");
   localStorage.removeItem("tutorug_role");
 };
 
 export const isLoggedIn = () => {
-  return localStorage.getItem("tutorug_logged_in") === "true";
+  return Boolean(localStorage.getItem("tutorug_token"));
 };
 
 export const getUserRole = () => {

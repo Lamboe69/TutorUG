@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { loginUser } from "../utils/auth";
+import { register } from "../services/authApi";
+import { setSession } from "../utils/auth";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -10,7 +12,9 @@ export default function Register() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleRegister = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = async () => {
     setError("");
 
     if (!name || !phone || !level || !password) {
@@ -18,13 +22,17 @@ export default function Register() {
       return;
     }
 
-    setLoading(true);
+    try {
+      setLoading(true);
+      const res = await register({ name, phone, password, level });
 
-    // TEMP: simulate registration
-    setTimeout(() => {
-   loginUser(level === "teacher" ? "teacher" : "student"); // auto-login after register
-      window.location.href = "/dashboard";
-    }, 1200);
+      setSession({ token: res.token, role: res.role });
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.message || "Registration failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
