@@ -1,0 +1,28 @@
+{
+  "version": "0.0.1",
+  "name": "tutorug-backend",
+  "build": {
+    "builder": "nixpacks"
+  },
+  "env": [
+    {
+      "key": "NODE_ENV",
+      "value": "production"
+    },
+    {
+      "key": "PORT",
+      "value": "3000"
+    }
+  ],
+  "services": [
+    {
+      "name": "api",
+      "buildCommand": "npm install",
+      "startCommand": "npm start",
+      "plan": "Standard"
+    }
+  ],
+  "envFrom": {
+    "dockerfile": "Dockerfile"
+  }
+}
