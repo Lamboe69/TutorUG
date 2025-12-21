@@ -22,7 +22,7 @@ export default function Register() {
 
     // TEMP: simulate registration
     setTimeout(() => {
-      loginUser(); // auto-login after register
+   loginUser(level === "teacher" ? "teacher" : "student"); // auto-login after register
       window.location.href = "/dashboard";
     }, 1200);
   };
