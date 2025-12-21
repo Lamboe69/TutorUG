@@ -1,5 +1,5 @@
 // Change this when backend is live
-const API_BASE_URL = "http://localhost:8000/api"; // placeholder
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // placeholder
 
 // MOCK MODE (true = no backend required)
 const MOCK_MODE = true;
