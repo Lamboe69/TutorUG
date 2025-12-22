@@ -1,27 +1,69 @@
 import { Routes, Route } from "react-router-dom";
+
+// Pages
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import AITutor from "./pages/AITutor";
+import StudentDashboard from "./pages/StudentDashboard";
 import Discussions from "./pages/Discussions";
-import DiscussionRoom from "./pages/DiscussionRoom";
 import Thread from "./pages/Thread";
 
-
+// Components / Routes
+import Navbar from "./components/Navbar";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/ai-tutor" element={<AITutor />} />
-      <Route path="/discussions" element={<Discussions />} />
-      <Route path="/discussions/:id" element={<DiscussionRoom />} />
-      <Route path="/thread/:id" element={<Thread />} />
+    <>
+      {/* Global Navbar */}
+      <Navbar />
 
-    </Routes>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Protected Routes */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <StudentDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/discussions"
+          element={
+            <ProtectedRoute>
+              <Discussions />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/discussions/:id"
+          element={
+            <ProtectedRoute>
+              <Thread />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/thread/:id"
+          element={
+            <ProtectedRoute>
+              <Thread />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Fallback */}
+        <Route path="*" element={<Landing />} />
+      </Routes>
+    </>
   );
 }
